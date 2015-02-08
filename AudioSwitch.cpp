@@ -10,12 +10,13 @@
  * Global Variables
  * **************************************************************************/
 
-HHOOK _keyboard_hook;
+HHOOK _keyboard_hook = NULL;
 
-HWND _window;
+HWND _window = NULL;
 
-ATOM _windowClass;
+ATOM _windowClass = NULL;
 
+bool _ctrlPressed = false;
 
 /* ***************************************************************************
  * Functions
@@ -48,18 +49,31 @@ LRESULT CALLBACK KeyboardProc( int code, WPARAM wParam, LPARAM lParam )
     {
         PKBDLLHOOKSTRUCT p = (PKBDLLHOOKSTRUCT)lParam;
         bool keyDown = 0 == ( p->flags & LLKHF_UP );
+
+        if ( p->vkCode == VK_RCONTROL || p->vkCode == VK_LCONTROL )
+        {
+            _ctrlPressed = keyDown;
+        }
+
         if ( keyDown )
         {
-            if ( p->vkCode == VK_F12 )
+            if ( _ctrlPressed && ( p->vkCode == VK_F12 ) )
             {
                 NextAudioPlaybackDevice();
             }
-            /*
-            else if ( p->vkCode == VK_ESCAPE )
+
+            #ifdef DEBUG
+            printf( 
+                "vkCode(%d) scanCode(%d) ctrl(%s)\n"
+                , p->vkCode
+                , p->scanCode 
+                , _ctrlPressed ? "true" : "false"
+            );
+            if ( p->vkCode == VK_ESCAPE )
             {
                 PostMessage( _window, WM_CLOSE, NULL, NULL );
             } 
-            */
+            #endif
         }
     }
         
