@@ -6,18 +6,17 @@ The AudioSwitch application lets you to switch between your audio playback devic
 
 In order to build this project you need to have the following set up:
 
-* SCons-win32 (Software Construction tool)
+* SCons-win32 (Software Construction tool)  
   SCons is a computer software construction tool that automatically analyzes source code file dependencies and operating system adaptation requirements from a software project description and generates final binary executables for installation on the target operating system platform. 
 
-* MS Windows SDK for Windows and .NET Framework (you don't need to install this if you have Visual Studio)
+* MS Windows SDK for Windows and .NET Framework (you don't need to install this if you have Visual Studio)   
   This is freeware download of command-line tools and needed libraries for C++ code compilation.
     
 Let's suppose that you:
 
-* have AudioSwitch source code in c:\src\audioswitch 
-  There must be SConstruct file present.
+* have AudioSwitch source code in `c:\src\audioswitch` 
 * installed Windows SDK for Windows and .NET Framework to default location
-* installed SCons into default location, i.e. there is %PYTHONPATH%\Scripts\scons.bat file
+* installed SCons into default location, i.e. there is `%PYTHONPATH%\Scripts\scons.bat` file
 
 Then:
 
