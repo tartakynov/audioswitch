@@ -1,0 +1,23 @@
+10026 ICON "AudioSwitch.ico"
+1 VERSIONINFO
+FILEVERSION     1,0,0,0
+PRODUCTVERSION  1,0,0,0
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904E4"
+    BEGIN
+      VALUE "FileDescription", "AudioSwitch Application"
+      VALUE "FileVersion", "1.0"
+      VALUE "InternalName", "AudioSwitch"
+      VALUE "OriginalFilename", "AudioSwitch.exe"
+      VALUE "ProductName", "AudioSwitch"
+      VALUE "ProductVersion", "1.0"
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1252
+  END
+END
